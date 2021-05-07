@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
+        <title>美淘互联-mtvps.com</title>
+        <meta name="keywords" content="vps服务器,高防vps,香港服务器,宿迁服务器,高防服务器,深圳服务器,香港vps,云服务器,服务器租用;日本vps,大带宽vps,bgp服务器">
+    <meta name="description" content="美淘互联是一家专注云服务提供商-国内领先企业互联网,专业提供国内外服务器租赁,域名注册,融合CDN,SSL证书,负载均衡,对象储存,等云计算服务器,弹性灵活,轻松助力企业及个人云端创业部署">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html,
+            body {
+                height: 100%;
+            }
+            .background {
+                width: 100%;
+                height: 100%;
+            }
+            .change {
+                position: fixed;
+                bottom: 40px;
+                left: 50%;
+                opacity: 0.5;
+                transform: translateX(-50%) scale(1);
+                z-index: 999;
+                border-radius: 50%;
+                transition: transform 0.25s, opacity 0.25s;
+                cursor: pointer;
+            }
+            .change.active {
+                transform: translateX(-50%) scale(1.35);
+                opacity: 0.75;
+                animation: shadow 1s;
+                box-shadow: 0 0 0 20px rgb(255 255 255 / 0%);
+            }
+            .notice {
+                position: fixed;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                opacity: 0.85;
+                text-align: center;
+                pointer-events: none;
+                font-size: 15px;
+                z-index: 1;
+            }
+            .notice h1 {
+                font-size: 40px;
+                margin-bottom: 15px;
+            }
+            @keyframes shadow {
+                0% {
+                    box-shadow: 0 0 0 0 #d4f1f5;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <video class="background" src="https://api.layer4.cn/cn_dy/douyin.php" autoplay loop></video>
+
+        <div class="notice">
+            <h1>www.mtvps.com</h1>
+            <p>__请使用上方域名访问__</p>
+        </div>
+
+        <svg class="change" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="35" height="35">
+            <path d="M0 512a512 512 0 1 0 1024 0A512 512 0 1 0 0 512z" fill="#D4F1F5" />
+            <path d="M413.235 522.598s9.319-3.225 17.383-1.28c8.704 1.92 8.37 8.346 8.37 8.346l-1.28 77.62 143.284 2.252s113.357-13.21 113.997-55.066c0 0-3.84 131.687-118.835 129.767l-139.75-2.56-1.28 83.072s0 4.505-8.705 6.118c-7.398 1.613-14.157-3.558-14.157-3.558-3.225-2.253-144.896-106.24-144.896-106.24s-13.542-7.091-13.21-20.941c.308-13.542 9.985-18.995 9.985-18.995zM600.96 259.814c6.118-.64 9.984 2.586 11.264 3.559L757.12 369.946s13.875 7.09 13.542 20.94c-.332 13.517-9.984 18.996-9.984 18.996l-149.401 99.174s-6.144 3.558-14.49 1.28c-10.317-2.893-10.65-8.038-10.65-8.038l1.28-77.927-144.23-2.56S329.83 435.328 329.19 477.184c0 0 4.173-132.02 119.143-130.1l140.39 1.946 1.28-83.097s1.613-5.12 10.957-6.119z" fill="#29BBCC" />
+        </svg>
+
+        <script>
+            const apis = ['https://api.layer4.cn/cn_dy/douyin.php'];
+            const video = document.querySelector('video');
+            const svg = document.querySelector('svg');
+            video.addEventListener('click', () => (video.paused ? video.play() : video.pause()));
+            let timer = null;
+            svg.addEventListener('click', function () {
+                video.src = apis[Math.floor(Math.random() * apis.length)];
+                this.classList.add('active');
+                timer = setTimeout(() => (this.classList.remove('active'), clearTimeout(timer)), 1000);
+            });
+        </script>
+    </body>
+</html>
